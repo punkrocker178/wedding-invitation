@@ -114,7 +114,15 @@
   line-height: 1.5;
 }
 .hdn-reference .pageview {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   overflow: hidden;
+}
+.hdn-reference .com-section {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
 }
 .hdn-reference .full-height {
   height: 100%;
@@ -368,9 +376,6 @@
 .hdn-reference [data-hd="w-fj4da0n4"] {
   width: 420px;
   height: 800px;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 .hdn-reference [data-hd="w-fj4da0n4"] .section-wrapper {
   opacity: 1;
@@ -508,25 +513,6 @@
   top: 0;
   left: -15.8824px;
 }
-.hdn-reference [data-hd="w-t2q4n0mp"] {
-  width: 420px;
-  height: 233px;
-  top: 0;
-  left: 0;
-}
-.hdn-reference [data-hd="w-t2q4n0mp"] .image-block-css {
-  border: 0 solid #e5e7eb;
-  position: absolute;
-}
-.hdn-reference [data-hd="w-t2q4n0mp"] .image-background {
-  --type: 0;
-  background: url(/templates/hoa-do-nhung/reference/asset-05.png) 50% / cover
-    no-repeat content-box border-box;
-  width: 421.54px;
-  height: 802.734px;
-  top: 0;
-  left: 0;
-}
 .hdn-reference [data-hd="w-k6jcv20g"] {
   width: 444px;
   height: 64px;
@@ -548,8 +534,8 @@
 }
 .hdn-reference [data-hd="w-0nt2objp"] {
   width: 284px;
-  height: 25.5px;
-  top: 51.5px;
+  height: 26px;
+  top: 52px;
   left: 68px;
 }
 .hdn-reference [data-hd="w-0nt2objp"] .text-block-css {
@@ -560,7 +546,7 @@
   border-style: solid;
   border-color: #e5e7eb;
   font-family: HdnRefFont2, sans-serif;
-  font-size: 17px;
+  font-size: 20px;
 }
 .hdn-reference [data-hd="w-h0oipjz4"] {
   width: 382px;
@@ -673,9 +659,6 @@
 .hdn-reference [data-hd="w-lnfoygwz"] {
   width: 420px;
   height: 553px;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 .hdn-reference [data-hd="w-lnfoygwz"] .section-wrapper {
   opacity: 1;
@@ -910,9 +893,6 @@
 .hdn-reference [data-hd="w-veq7x7z0"] {
   width: 420px;
   height: 220px;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 .hdn-reference [data-hd="w-veq7x7z0"] .section-wrapper {
   opacity: 1;
@@ -989,9 +969,6 @@
 .hdn-reference [data-hd="w-z3vw3h2x"] {
   width: 420px;
   height: 325px;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 .hdn-reference [data-hd="w-z3vw3h2x"] .section-wrapper {
   opacity: 1;
@@ -1104,8 +1081,6 @@
 }
 .hdn-reference [data-hd="w-r4bbxklt"] .image-background {
   --type: 0;
-  background: url(/demo/hoa-do-nhung/reference/w-r4bbxklt.webp) 50% / cover
-    no-repeat content-box border-box;
   width: 169.283px;
   height: 211.591px;
   top: 0;
@@ -1190,9 +1165,6 @@
 .hdn-reference [data-hd="w-lyeg4h12"] {
   width: 420px;
   height: 307px;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 .hdn-reference [data-hd="w-lyeg4h12"] .section-wrapper {
   opacity: 1;
@@ -1311,9 +1283,6 @@
 .hdn-reference [data-hd="w-6kj1myr7"] {
   width: 420px;
   height: 446px;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 .hdn-reference [data-hd="w-6kj1myr7"] .section-wrapper {
   opacity: 1;
@@ -1458,9 +1427,6 @@
 .hdn-reference [data-hd="w-xhi0gyb7"] {
   width: 420px;
   height: 354px;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 .hdn-reference [data-hd="w-xhi0gyb7"] .section-wrapper {
   opacity: 1;
@@ -1538,9 +1504,6 @@
 .hdn-reference [data-hd="w-d9zl7cty"] {
   width: 420px;
   height: 364px;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 .hdn-reference [data-hd="w-d9zl7cty"] .section-wrapper {
   opacity: 1;
@@ -1597,9 +1560,6 @@
 .hdn-reference [data-hd="w-g1qbffbt"] {
   width: 420px;
   height: 619px;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 .hdn-reference [data-hd="w-g1qbffbt"] .section-wrapper {
   opacity: 1;
@@ -1798,9 +1758,6 @@
 .hdn-reference [data-hd="w-2qzgc0e9"] {
   width: 420px;
   height: 230px;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 .hdn-reference [data-hd="w-2qzgc0e9"] .section-wrapper {
   opacity: 1;
@@ -1888,9 +1845,6 @@
 .hdn-reference [data-hd="w-akq1hp3b"] {
   width: 420px;
   height: 298px;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 .hdn-reference [data-hd="w-akq1hp3b"] .section-wrapper {
   opacity: 1;
@@ -1943,9 +1897,6 @@
 .hdn-reference [data-hd="w-u142c3qv"] {
   width: 420px;
   height: 298px;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 .hdn-reference [data-hd="w-u142c3qv"] .section-wrapper {
   opacity: 1;
@@ -2017,9 +1968,6 @@
 .hdn-reference [data-hd="w-992t5t0q"] {
   width: 420px;
   height: 298px;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 .hdn-reference [data-hd="w-992t5t0q"] .section-wrapper {
   opacity: 1;
@@ -2080,9 +2028,6 @@
 .hdn-reference [data-hd="w-3dpujxky"] {
   width: 420px;
   height: 438px;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 .hdn-reference [data-hd="w-3dpujxky"] .section-wrapper {
   opacity: 1;
@@ -2189,9 +2134,6 @@
 .hdn-reference [data-hd="w-t5d52bo9"] {
   width: 420px;
   height: 48px;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 .hdn-reference [data-hd="w-t5d52bo9"] .section-wrapper {
   opacity: 1;
@@ -2776,7 +2718,7 @@
   }
 }
 .hr-page {
-  background: #fff;
+  background-color: #fae5e0;
   min-height: 100svh;
 }
 .hr-shell {
@@ -3179,4 +3121,15 @@
 body {
   margin: 0;
   background: #fff;
+}
+.envelope-red {
+  background-color: #9a1b22;
+}
+
+.envelope-pink {
+  background-color: #fae5e0;
+}
+
+.envelope-text-pink {
+  background-color: #b2545c;
 }

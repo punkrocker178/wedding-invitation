@@ -206,19 +206,6 @@ export default function App() {
                     </div>
                     {/* First block */}
                     <div
-                      data-hd="w-t2q4n0mp"
-                      className="com-image-block p-absolute"
-                    >
-                      <div className="image-block-css p-relative full-width full-height full-mask-size mask-position">
-                        <div
-                          className="image-background p-absolute"
-                          role="img"
-                          aria-label=""
-                        ></div>
-                        <div className="image-gradient-border"></div>
-                      </div>
-                    </div>
-                    <div
                       data-hd="w-k6jcv20g"
                       className="com-text-block p-absolute"
                       data-motion="fadeInDown"
@@ -341,7 +328,7 @@ export default function App() {
                                     objectPosition: "center",
                                     color: "transparent",
                                   }}
-                                  src="/demo/hoa-do-nhung/reference/w-0vwiugez.webp"
+                                  src="/images/2.webp"
                                 />
                               </span>
                             </div>
@@ -651,7 +638,7 @@ export default function App() {
                                 style={{ position: "absolute", inset: "0" }}
                               >
                                 <img
-                                  alt="Chú rể Anh Tú"
+                                  alt="Chú rể Ngọc Hiếu"
                                   loading="lazy"
                                   decoding="async"
                                   style={{
@@ -666,7 +653,7 @@ export default function App() {
                                     objectPosition: "center",
                                     color: "transparent",
                                   }}
-                                  src="/demo/hoa-do-nhung/reference/w-r4bbxklt.webp"
+                                  src="/images/1.webp"
                                 />
                               </span>
                             </div>
@@ -719,7 +706,7 @@ export default function App() {
                                 style={{ position: "absolute", inset: "0" }}
                               >
                                 <img
-                                  alt="Cô dâu Diệu Nhi"
+                                  alt="Cô dâu Lan Anh"
                                   loading="lazy"
                                   decoding="async"
                                   style={{
@@ -734,7 +721,7 @@ export default function App() {
                                     objectPosition: "center",
                                     color: "transparent",
                                   }}
-                                  src="/demo/hoa-do-nhung/reference/w-58emprtq.webp"
+                                  src="/images/6.webp"
                                 />
                               </span>
                             </div>
@@ -1407,7 +1394,7 @@ export default function App() {
                                 objectPosition: "center",
                                 color: "transparent",
                               }}
-                              src="/demo/hoa-do-nhung/reference/w-nqqdc52g.webp"
+                              src="/images/2.webp"
                             />
                           </span>
                         </div>
@@ -1439,7 +1426,7 @@ export default function App() {
                                 objectPosition: "center",
                                 color: "transparent",
                               }}
-                              src="/demo/hoa-do-nhung/reference/w-0vwiugez.webp"
+                              src="/images/3.jpg"
                             />
                           </span>
                         </div>
@@ -1478,7 +1465,7 @@ export default function App() {
                                 objectPosition: "center",
                                 color: "transparent",
                               }}
-                              src="/demo/hoa-do-nhung/reference/w-q61m13q1.webp"
+                              src="/images/5.jpg"
                             />
                           </span>
                         </div>
@@ -1489,13 +1476,13 @@ export default function App() {
                       type="button"
                       data-hd="w-5clwmj41"
                       className="com-image-block p-absolute hr-photo"
-                      aria-label="Xem ảnh: Ngọc Hiếu và Lan Anh — ảnh 4"
+                      aria-label="Xem ảnh: Ngọc Hiếu và Lan Anh — ảnh 3"
                     >
                       <div className="image-block-css p-relative full-width full-height full-mask-size mask-position">
                         <div className="image-background p-absolute">
                           <span style={{ position: "absolute", inset: "0" }}>
                             <img
-                              alt="Ngọc Hiếu và Lan Anh — ảnh 4"
+                              alt="Ngọc Hiếu và Lan Anh — ảnh 3"
                               loading="lazy"
                               decoding="async"
                               style={{
@@ -1510,7 +1497,7 @@ export default function App() {
                                 objectPosition: "center",
                                 color: "transparent",
                               }}
-                              src="/demo/hoa-do-nhung/reference/w-5clwmj41.jpg"
+                              src="/images/15.jpg"
                             />
                           </span>
                         </div>
@@ -1542,7 +1529,7 @@ export default function App() {
                                 objectPosition: "center",
                                 color: "transparent",
                               }}
-                              src="/demo/hoa-do-nhung/reference/w-zb99fbrh.jpg"
+                              src="/images/7.jpg"
                             />
                           </span>
                         </div>
@@ -1581,7 +1568,7 @@ export default function App() {
                                 objectPosition: "center",
                                 color: "transparent",
                               }}
-                              src="/demo/hoa-do-nhung/reference/w-24zrhaaq.webp"
+                              src="/images/12.jpg"
                             />
                           </span>
                         </div>
@@ -1613,7 +1600,7 @@ export default function App() {
                                 objectPosition: "center",
                                 color: "transparent",
                               }}
-                              src="/demo/hoa-do-nhung/reference/w-bqle08a8.webp"
+                              src="/images/9.jpg"
                             />
                           </span>
                         </div>
@@ -1642,7 +1629,7 @@ export default function App() {
                         objectPosition: "center",
                         color: "transparent",
                       }}
-                      src="/demo/hoa-do-nhung/reference/w-xyxsg7dn.jpg"
+                      src="/images/10.jpg"
                     />
                   </span>
                 </button>
@@ -1664,11 +1651,11 @@ export default function App() {
                         objectPosition: "center",
                         color: "transparent",
                       }}
-                      src="/demo/hoa-do-nhung/reference/w-s8y2outk.jpg"
+                      src="/images/11.jpg"
                     />
                   </span>
                 </button>
-                <button type="button" aria-label="Xem ảnh thêm 3">
+                {/* <button type="button" aria-label="Xem ảnh thêm 3">
                   <span style={{ position: "absolute", inset: "0" }}>
                     <img
                       alt="Ngọc Hiếu và Lan Anh — ảnh 10"
@@ -1689,7 +1676,24 @@ export default function App() {
                       src="/demo/hoa-do-nhung/reference/w-40oxcrfo.jpg"
                     />
                   </span>
+                </button> */}
+              </div>
+              <button type="button" aria-label="Xem ảnh thêm 3">
+                    <img
+                      alt="Ngọc Hiếu và Lan Anh — ảnh 10"
+                      loading="lazy"
+                      decoding="async"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        objectPosition: "center",
+                      }}
+                      src="/images/14.webp"
+                    />
                 </button>
+              <div>
+
               </div>
               {/* --- Opened Envelope Section --- */}
               <div data-hd="w-3dpujxky" className="com-section" data-section="">
