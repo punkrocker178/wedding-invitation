@@ -125,7 +125,7 @@ export default function App() {
                                     objectPosition: "center",
                                     color: "transparent",
                                   }}
-                                  src="/demo/hoa-do-nhung/reference/w-q61m13q1.webp"
+                                  src="/images/16.webp"
                                 />
                               </span>
                             </div>
@@ -160,7 +160,7 @@ export default function App() {
                                     objectPosition: "center",
                                     color: "transparent",
                                   }}
-                                  src="/demo/hoa-do-nhung/reference/w-0vwiugez.webp"
+                                  src="/images/17.webp"
                                 />
                               </span>
                             </div>
@@ -195,7 +195,7 @@ export default function App() {
                                     objectPosition: "center",
                                     color: "transparent",
                                   }}
-                                  src="/demo/hoa-do-nhung/reference/w-nqqdc52g.webp"
+                                  src="/images/18.webp"
                                 />
                               </span>
                             </div>
