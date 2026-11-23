@@ -19,12 +19,14 @@ export default function App() {
     }
   }
 
-  function onPageClick(event: MouseEvent<HTMLDivElement>) {
-    const target = event.target as HTMLElement;
-    const photoButton = target.closest(".hr-photo, .hr-extra-album button");
-    if (!photoButton) return;
-    const image = photoButton.querySelector("img");
-    if (image?.src) setPhoto({ src: image.src, alt: image.alt });
+  function onImageClick(event: MouseEvent<HTMLImageElement>) {
+    const image = event.currentTarget;
+    setPhoto({ src: image.src, alt: image.alt });
+  }
+
+  function onPhotoButtonClick(event: MouseEvent<HTMLButtonElement>) {
+    if (event.detail !== 0 || event.target instanceof HTMLImageElement) return;
+    event.currentTarget.querySelector("img")?.click();
   }
 
   function onSubmitRsvp(event: FormEvent<HTMLFormElement>) {
@@ -34,7 +36,7 @@ export default function App() {
 
   return (
     <>
-      <div className="hr-page" onClick={onPageClick}>
+      <div className="hr-page">
         <h1 className="sr-only">Ngọc Hiếu & Lan Anh</h1>
         <div className="hr-shell">
           <div
@@ -98,6 +100,7 @@ export default function App() {
                           </div>
                         </div>
                         <button
+                          onClick={onPhotoButtonClick}
                           type="button"
                           data-hd="w-s8y2outk"
                           className="com-image-block p-absolute hr-photo"
@@ -109,6 +112,7 @@ export default function App() {
                                 style={{ position: "absolute", inset: "0" }}
                               >
                                 <img
+                                  onClick={onImageClick}
                                   alt="Ngọc Hiếu & Lan Anh"
                                   fetchPriority="high"
                                   loading="eager"
@@ -133,6 +137,7 @@ export default function App() {
                           </div>
                         </button>
                         <button
+                          onClick={onPhotoButtonClick}
                           type="button"
                           data-hd="w-xyxsg7dn"
                           className="com-image-block p-absolute hr-photo"
@@ -144,6 +149,7 @@ export default function App() {
                                 style={{ position: "absolute", inset: "0" }}
                               >
                                 <img
+                                  onClick={onImageClick}
                                   alt="Ngọc Hiếu và Lan Anh — ảnh 2"
                                   fetchPriority="high"
                                   loading="eager"
@@ -168,6 +174,7 @@ export default function App() {
                           </div>
                         </button>
                         <button
+                          onClick={onPhotoButtonClick}
                           type="button"
                           data-hd="w-dlardhx1"
                           className="com-image-block p-absolute hr-photo"
@@ -179,6 +186,7 @@ export default function App() {
                                 style={{ position: "absolute", inset: "0" }}
                               >
                                 <img
+                                  onClick={onImageClick}
                                   alt="Ngọc Hiếu và Lan Anh — ảnh 1"
                                   fetchPriority="high"
                                   loading="eager"
@@ -302,6 +310,7 @@ export default function App() {
                     >
                       <div className="group-container">
                         <button
+                          onClick={onPhotoButtonClick}
                           type="button"
                           data-hd="w-0vwiugez"
                           className="com-image-block p-absolute hr-photo"
@@ -313,6 +322,7 @@ export default function App() {
                                 style={{ position: "absolute", inset: "0" }}
                               >
                                 <img
+                                  onClick={onImageClick}
                                   alt="Ngọc Hiếu và Lan Anh — ảnh 2"
                                   loading="lazy"
                                   decoding="async"
@@ -627,6 +637,7 @@ export default function App() {
                           </div>
                         </div>
                         <button
+                          onClick={onPhotoButtonClick}
                           type="button"
                           data-hd="w-r4bbxklt"
                           className="com-image-block p-absolute hr-photo"
@@ -638,6 +649,7 @@ export default function App() {
                                 style={{ position: "absolute", inset: "0" }}
                               >
                                 <img
+                                  onClick={onImageClick}
                                   alt="Chú rể Ngọc Hiếu"
                                   loading="lazy"
                                   decoding="async"
@@ -695,6 +707,7 @@ export default function App() {
                           </div>
                         </div>
                         <button
+                          onClick={onPhotoButtonClick}
                           type="button"
                           data-hd="w-58emprtq"
                           className="com-image-block p-absolute hr-photo"
@@ -706,6 +719,7 @@ export default function App() {
                                 style={{ position: "absolute", inset: "0" }}
                               >
                                 <img
+                                  onClick={onImageClick}
                                   alt="Cô dâu Lan Anh"
                                   loading="lazy"
                                   decoding="async"
@@ -1370,6 +1384,7 @@ export default function App() {
                   <div className="section-background p-absolute full-width full-height"></div>
                   <div className="section-container full-height p-relative">
                     <button
+                      onClick={onPhotoButtonClick}
                       type="button"
                       data-hd="w-nqqdc52g"
                       className="com-image-block p-absolute hr-photo"
@@ -1379,6 +1394,7 @@ export default function App() {
                         <div className="image-background p-absolute">
                           <span style={{ position: "absolute", inset: "0" }}>
                             <img
+                              onClick={onImageClick}
                               alt="Ngọc Hiếu và Lan Anh — ảnh 1"
                               loading="lazy"
                               decoding="async"
@@ -1402,6 +1418,7 @@ export default function App() {
                       </div>
                     </button>
                     <button
+                      onClick={onPhotoButtonClick}
                       type="button"
                       data-hd="w-8ea7cm3t"
                       className="com-image-block p-absolute hr-photo"
@@ -1411,6 +1428,7 @@ export default function App() {
                         <div className="image-background p-absolute">
                           <span style={{ position: "absolute", inset: "0" }}>
                             <img
+                              onClick={onImageClick}
                               alt="Ngọc Hiếu và Lan Anh — ảnh 2"
                               loading="lazy"
                               decoding="async"
@@ -1441,6 +1459,7 @@ export default function App() {
                   <div className="section-background p-absolute full-width full-height"></div>
                   <div className="section-container full-height p-relative">
                     <button
+                      onClick={onPhotoButtonClick}
                       type="button"
                       data-hd="w-q61m13q1"
                       className="com-image-block p-absolute hr-photo"
@@ -1450,6 +1469,7 @@ export default function App() {
                         <div className="image-background p-absolute">
                           <span style={{ position: "absolute", inset: "0" }}>
                             <img
+                              onClick={onImageClick}
                               alt="Ngọc Hiếu và Lan Anh — ảnh 3"
                               loading="lazy"
                               decoding="async"
@@ -1473,6 +1493,7 @@ export default function App() {
                       </div>
                     </button>
                     <button
+                      onClick={onPhotoButtonClick}
                       type="button"
                       data-hd="w-5clwmj41"
                       className="com-image-block p-absolute hr-photo"
@@ -1482,6 +1503,7 @@ export default function App() {
                         <div className="image-background p-absolute">
                           <span style={{ position: "absolute", inset: "0" }}>
                             <img
+                              onClick={onImageClick}
                               alt="Ngọc Hiếu và Lan Anh — ảnh 3"
                               loading="lazy"
                               decoding="async"
@@ -1505,6 +1527,7 @@ export default function App() {
                       </div>
                     </button>
                     <button
+                      onClick={onPhotoButtonClick}
                       type="button"
                       data-hd="w-zb99fbrh"
                       className="com-image-block p-absolute hr-photo"
@@ -1514,6 +1537,7 @@ export default function App() {
                         <div className="image-background p-absolute">
                           <span style={{ position: "absolute", inset: "0" }}>
                             <img
+                              onClick={onImageClick}
                               alt="Ngọc Hiếu và Lan Anh — ảnh 5"
                               loading="lazy"
                               decoding="async"
@@ -1544,6 +1568,7 @@ export default function App() {
                   <div className="section-background p-absolute full-width full-height"></div>
                   <div className="section-container full-height p-relative">
                     <button
+                      onClick={onPhotoButtonClick}
                       type="button"
                       data-hd="w-24zrhaaq"
                       className="com-image-block p-absolute hr-photo"
@@ -1553,6 +1578,7 @@ export default function App() {
                         <div className="image-background p-absolute">
                           <span style={{ position: "absolute", inset: "0" }}>
                             <img
+                              onClick={onImageClick}
                               alt="Ngọc Hiếu và Lan Anh — ảnh 6"
                               loading="lazy"
                               decoding="async"
@@ -1576,6 +1602,7 @@ export default function App() {
                       </div>
                     </button>
                     <button
+                      onClick={onPhotoButtonClick}
                       type="button"
                       data-hd="w-bqle08a8"
                       className="com-image-block p-absolute hr-photo"
@@ -1585,6 +1612,7 @@ export default function App() {
                         <div className="image-background p-absolute">
                           <span style={{ position: "absolute", inset: "0" }}>
                             <img
+                              onClick={onImageClick}
                               alt="Ngọc Hiếu và Lan Anh — ảnh 7"
                               loading="lazy"
                               decoding="async"
@@ -1611,9 +1639,10 @@ export default function App() {
                 </div>
               </div>
               <div className="hr-extra-album">
-                <button type="button" aria-label="Xem ảnh thêm 1">
+                <button onClick={onPhotoButtonClick} type="button" aria-label="Xem ảnh thêm 1">
                   <span style={{ position: "absolute", inset: "0" }}>
                     <img
+                      onClick={onImageClick}
                       alt="Ngọc Hiếu và Lan Anh — ảnh 8"
                       loading="lazy"
                       decoding="async"
@@ -1633,9 +1662,10 @@ export default function App() {
                     />
                   </span>
                 </button>
-                <button type="button" aria-label="Xem ảnh thêm 2">
+                <button onClick={onPhotoButtonClick} type="button" aria-label="Xem ảnh thêm 2">
                   <span style={{ position: "absolute", inset: "0" }}>
                     <img
+                      onClick={onImageClick}
                       alt="Ngọc Hiếu và Lan Anh — ảnh 9"
                       loading="lazy"
                       decoding="async"
@@ -1678,8 +1708,9 @@ export default function App() {
                   </span>
                 </button> */}
               </div>
-              <button type="button" aria-label="Xem ảnh thêm 3">
+              <button onClick={onPhotoButtonClick} type="button" aria-label="Xem ảnh thêm 3">
                     <img
+                      onClick={onImageClick}
                       alt="Ngọc Hiếu và Lan Anh — ảnh 10"
                       loading="lazy"
                       decoding="async"
