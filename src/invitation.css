@@ -705,6 +705,7 @@
   height: 297px;
   top: 0;
   left: 0;
+  pointer-events: none;
 }
 .hdn-reference [data-hd="w-c5pwh3yw"] .image-block-css {
   border: 0 solid #e5e7eb;
