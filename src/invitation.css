@@ -387,17 +387,6 @@
   --type: 0;
   background: #7a100c;
 }
-.hdn-reference [data-hd="w-yejs5w1a"] {
-  width: 355px;
-  height: 103px;
-  top: 663px;
-  left: -458px;
-}
-.hdn-reference [data-hd="w-yejs5w1a"] .rectangle-css {
-  background: #8d93ab padding-box padding-box;
-  border-style: solid;
-  border-color: #fff;
-}
 .hdn-reference [data-hd="w-yohs1f9y"] {
   width: 420px;
   height: 800px;
@@ -2911,6 +2900,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 8px;
   display: grid;
+  padding: 0 12px;
 }
 .hdn-reference .hr-extra-album button {
   aspect-ratio: 206/260;
@@ -2952,9 +2942,6 @@
 }
 .hdn-reference [data-hd="w-9t90yjc1"].hr-visible {
   animation: none;
-}
-.hdn-reference [data-hd="w-9t90yjc1"] > .group-container {
-  transform: translateY(-100%);
 }
 .hdn-reference [data-hd="w-9t90yjc1"].hr-visible > .group-container {
   animation: hr-slide-from-slot var(--hr-duration, 5s) ease-out both;
@@ -3034,13 +3021,10 @@
   background: #890000;
 }
 @media (prefers-reduced-motion: reduce) {
-  .hdn-reference [data-motion] {
+  .hdn-reference [data-motion],
+  .hdn-reference [data-hd="w-9t90yjc1"] > .group-container {
     opacity: 1;
     transition: none !important;
-    animation: none !important;
-  }
-  .hdn-reference [data-hd="w-9t90yjc1"] > .group-container {
-    transform: none;
     animation: none !important;
   }
 }
@@ -3096,7 +3080,6 @@
   position: fixed;
   inset: 0;
   z-index: 80;
-  display: grid;
   place-items: center;
   padding: 24px;
   background: #1a0a0ae6;
@@ -3133,4 +3116,166 @@ body {
 
 .envelope-text-pink {
   background-color: #b2545c;
+}
+
+/* Flex layout for the opening section only. */
+.hdn-reference [data-hd="w-fj4da0n4"],
+.hdn-reference [data-hd="w-fj4da0n4"] .section-wrapper {
+  width: 100%;
+  height: auto;
+}
+.hdn-reference [data-hd="w-fj4da0n4"] .section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  width: 100%;
+  height: auto;
+  padding: 28px 18px 36px;
+  background:
+    url(/templates/hoa-do-nhung/reference/asset-00.png) center / cover no-repeat,
+    #7a100c;
+}
+.hdn-reference [data-hd="w-fj4da0n4"] .group-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  height: auto;
+}
+.hdn-reference [data-hd="w-fj4da0n4"] .section-container .p-absolute {
+  position: static;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+.hdn-reference [data-hd="w-fj4da0n4"] .full-width,
+.hdn-reference [data-hd="w-fj4da0n4"] .full-height,
+.hdn-reference [data-hd="w-fj4da0n4"] .image-block-css,
+.hdn-reference [data-hd="w-fj4da0n4"] .rectangle-css,
+.hdn-reference [data-hd="w-fj4da0n4"] .text-block,
+.hdn-reference [data-hd="w-fj4da0n4"] .text-block-css {
+  position: static;
+  inset: auto;
+  width: 100%;
+  height: auto;
+}
+.hdn-reference [data-hd="w-fj4da0n4"] .image-background {
+  position: static;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  background-position: center;
+  background-size: cover;
+}
+.hdn-reference [data-hd="w-fj4da0n4"] .image-background > span {
+  position: static !important;
+  inset: auto !important;
+  display: block;
+}
+.hdn-reference [data-hd="w-fj4da0n4"] img {
+  position: static !important;
+  inset: auto !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+}
+.hdn-reference [data-hd="w-fj4da0n4"] .com-rectangle,
+.hdn-reference [data-hd="w-fj4da0n4"] [data-hd="w-yohs1f9y"],
+.hdn-reference [data-hd="w-fj4da0n4"] [data-hd="w-06dk0w07"],
+.hdn-reference [data-hd="w-fj4da0n4"] [data-hd="w-ow7uuduh"],
+.hdn-reference [data-hd="w-fj4da0n4"] [data-hd="w-v6emijd1"] {
+  display: none;
+}
+.hdn-reference [data-hd="w-fj4da0n4"] [data-hd="w-0nt2objp"] { order: 1; }
+.hdn-reference [data-hd="w-fj4da0n4"] [data-hd="w-k6jcv20g"] { order: 2; }
+.hdn-reference [data-hd="w-fj4da0n4"] [data-hd="w-9t90yjc1"] { order: 3; }
+.hdn-reference [data-hd="w-fj4da0n4"] [data-hd="w-vzi42th0"] { order: 4; }
+.hdn-reference [data-hd="w-fj4da0n4"] [data-hd="w-dlardhx1"] { order: 1; }
+.hdn-reference [data-hd="w-fj4da0n4"] [data-hd="w-xyxsg7dn"] { order: 2; }
+.hdn-reference [data-hd="w-fj4da0n4"] [data-hd="w-s8y2outk"] { order: 3; }
+.hdn-reference [data-hd="w-fj4da0n4"] [data-hd="w-9t90yjc1"] {
+  width: min(70%, 190px);
+  overflow: visible;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 4px 4px #00000040;
+}
+.hdn-reference [data-hd="w-fj4da0n4"] [data-hd="w-9t90yjc1"] .hr-photo {
+  width: 100%;
+  overflow: hidden;
+}
+.hdn-reference [data-hd="w-fj4da0n4"] [data-hd="w-9t90yjc1"] img {
+  aspect-ratio: 5 / 4;
+}
+.hdn-reference [data-hd="w-fj4da0n4"] [data-hd="w-vzi42th0"] {
+  width: auto;
+  background: #fff;
+  border-radius: 999px;
+  padding: 8px 28px;
+  box-shadow: 0 4px 4px #00000040;
+}
+
+.hdn-reference .image-group-1 .section-container,
+.hdn-reference .image-group-2 .section-container {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+.hdn-reference .image-group-1 .section-container > .com-image-block,
+.hdn-reference .image-group-2 .section-container > .com-image-block,
+.hdn-reference .image-group-2 .section-container > .flex {
+  display: flex;
+  position: relative;
+  inset: auto;
+  flex: 1 1 0;
+  width: auto;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.hdn-reference .image-group-2 .section-container > .flex > .com-image-block {
+  display: flex;
+  position: relative;
+  inset: auto;
+  flex: 1 1 0;
+  width: auto;
+  height: auto;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.hdn-reference .image-group-1 .com-image-block > img,
+.hdn-reference .image-group-2 .com-image-block .image-block-css,
+.hdn-reference .image-group-2 .com-image-block .image-background,
+.hdn-reference .image-group-2 .com-image-block .image-background > span,
+.hdn-reference .image-group-2 .com-image-block img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.hdn-reference .image-group-1 .com-image-block > img,
+.hdn-reference .image-group-2 .com-image-block img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.gallery-title {
+  margin-left: 22px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-family: HdnRefFont6, sans-serif;
+  color: #b2545c
 }
