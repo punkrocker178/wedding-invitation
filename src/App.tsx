@@ -11,6 +11,7 @@ export default function App() {
     const audio = audioRef.current;
     if (!audio) return;
     if (audio.paused) {
+      audio.volume = 0.6;
       void audio.play();
       setPlaying(true);
     } else {
@@ -19,12 +20,14 @@ export default function App() {
     }
   }
 
-  function onPageClick(event: MouseEvent<HTMLDivElement>) {
-    const target = event.target as HTMLElement;
-    const photoButton = target.closest(".hr-photo, .hr-extra-album button");
-    if (!photoButton) return;
-    const image = photoButton.querySelector("img");
-    if (image?.src) setPhoto({ src: image.src, alt: image.alt });
+  function onImageClick(event: MouseEvent<HTMLImageElement>) {
+    const image = event.currentTarget;
+    setPhoto({ src: image.src, alt: image.alt });
+  }
+
+  function onPhotoButtonClick(event: MouseEvent<HTMLButtonElement>) {
+    if (event.detail !== 0 || event.target instanceof HTMLImageElement) return;
+    event.currentTarget.querySelector("img")?.click();
   }
 
   function onSubmitRsvp(event: FormEvent<HTMLFormElement>) {
@@ -34,7 +37,7 @@ export default function App() {
 
   return (
     <>
-      <div className="hr-page" onClick={onPageClick}>
+      <div className="hr-page">
         <h1 className="sr-only">Ngọc Hiếu & Lan Anh</h1>
         <div className="hr-shell">
           <div
@@ -48,14 +51,6 @@ export default function App() {
                 <div className="section-wrapper full-width full-height p-relative">
                   <div className="section-background p-absolute full-width full-height"></div>
                   <div className="section-container full-height p-relative">
-                    <div
-                      data-hd="w-yejs5w1a"
-                      className="com-rectangle p-absolute"
-                    >
-                      <div className="rectangle-css full-mask-size mask-position full-height full-width">
-                        <div className="rectangle-gradient-border"></div>
-                      </div>
-                    </div>
                     <div
                       data-hd="w-yohs1f9y"
                       className="com-image-block p-absolute"
@@ -98,6 +93,7 @@ export default function App() {
                           </div>
                         </div>
                         <button
+                          onClick={onPhotoButtonClick}
                           type="button"
                           data-hd="w-s8y2outk"
                           className="com-image-block p-absolute hr-photo"
@@ -109,6 +105,7 @@ export default function App() {
                                 style={{ position: "absolute", inset: "0" }}
                               >
                                 <img
+                                  onClick={onImageClick}
                                   alt="Ngọc Hiếu & Lan Anh"
                                   fetchPriority="high"
                                   loading="eager"
@@ -125,7 +122,7 @@ export default function App() {
                                     objectPosition: "center",
                                     color: "transparent",
                                   }}
-                                  src="/images/16.webp"
+                                  src="/images/16.jpg"
                                 />
                               </span>
                             </div>
@@ -133,6 +130,7 @@ export default function App() {
                           </div>
                         </button>
                         <button
+                          onClick={onPhotoButtonClick}
                           type="button"
                           data-hd="w-xyxsg7dn"
                           className="com-image-block p-absolute hr-photo"
@@ -144,6 +142,7 @@ export default function App() {
                                 style={{ position: "absolute", inset: "0" }}
                               >
                                 <img
+                                  onClick={onImageClick}
                                   alt="Ngọc Hiếu và Lan Anh — ảnh 2"
                                   fetchPriority="high"
                                   loading="eager"
@@ -168,6 +167,7 @@ export default function App() {
                           </div>
                         </button>
                         <button
+                          onClick={onPhotoButtonClick}
                           type="button"
                           data-hd="w-dlardhx1"
                           className="com-image-block p-absolute hr-photo"
@@ -179,6 +179,7 @@ export default function App() {
                                 style={{ position: "absolute", inset: "0" }}
                               >
                                 <img
+                                  onClick={onImageClick}
                                   alt="Ngọc Hiếu và Lan Anh — ảnh 1"
                                   fetchPriority="high"
                                   loading="eager"
@@ -294,62 +295,6 @@ export default function App() {
                 <div className="section-wrapper full-width full-height p-relative">
                   <div className="section-background p-absolute full-width full-height"></div>
                   <div className="section-container full-height p-relative">
-                    <div
-                      data-hd="w-ofgbn457"
-                      className="p-absolute group-auto-scroll sroll-size"
-                      data-motion="fadeInBottomRight"
-                      data-duration="3"
-                    >
-                      <div className="group-container">
-                        <button
-                          type="button"
-                          data-hd="w-0vwiugez"
-                          className="com-image-block p-absolute hr-photo"
-                          aria-label="Xem ảnh: Ngọc Hiếu và Lan Anh — ảnh 2"
-                        >
-                          <div className="image-block-css p-relative full-width full-height full-mask-size mask-position">
-                            <div className="image-background p-absolute">
-                              <span
-                                style={{ position: "absolute", inset: "0" }}
-                              >
-                                <img
-                                  alt="Ngọc Hiếu và Lan Anh — ảnh 2"
-                                  loading="lazy"
-                                  decoding="async"
-                                  style={{
-                                    position: "absolute",
-                                    height: "100%",
-                                    width: "100%",
-                                    left: "0",
-                                    top: "0",
-                                    right: "0",
-                                    bottom: "0",
-                                    objectFit: "cover",
-                                    objectPosition: "center",
-                                    color: "transparent",
-                                  }}
-                                  src="/images/2.webp"
-                                />
-                              </span>
-                            </div>
-                            <div className="image-gradient-border"></div>
-                          </div>
-                        </button>
-                        <div
-                          data-hd="w-c5pwh3yw"
-                          className="com-image-block p-absolute"
-                        >
-                          <div className="image-block-css p-relative full-width full-height full-mask-size mask-position">
-                            <div
-                              className="image-background p-absolute"
-                              role="img"
-                              aria-label=""
-                            ></div>
-                            <div className="image-gradient-border"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
                     <div
                       data-hd="w-1st3vry8"
                       className="com-text-block p-absolute"
@@ -471,6 +416,64 @@ export default function App() {
                           Của Con Chúng Tôi:
                           <br />
                         </p>
+                      </div>
+                    </div>
+                    <div
+                      data-hd="w-ofgbn457"
+                      className="p-absolute group-auto-scroll sroll-size"
+                      data-motion="fadeInBottomRight"
+                      data-duration="3"
+                    >
+                      <div className="group-container">
+                        <button
+                          onClick={onPhotoButtonClick}
+                          type="button"
+                          data-hd="w-0vwiugez"
+                          className="com-image-block p-absolute hr-photo"
+                          aria-label="Xem ảnh: Ngọc Hiếu và Lan Anh — ảnh 2"
+                        >
+                          <div className="image-block-css p-relative full-width full-height full-mask-size mask-position">
+                            <div className="image-background p-absolute">
+                              <span
+                                style={{ position: "absolute", inset: "0" }}
+                              >
+                                <img
+                                  onClick={onImageClick}
+                                  alt="Ngọc Hiếu và Lan Anh — ảnh 2"
+                                  loading="lazy"
+                                  decoding="async"
+                                  style={{
+                                    position: "absolute",
+                                    height: "100%",
+                                    width: "100%",
+                                    left: "0",
+                                    top: "0",
+                                    right: "0",
+                                    bottom: "0",
+                                    objectFit: "cover",
+                                    objectPosition: "center",
+                                    color: "transparent",
+                                  }}
+                                  src="/images/2.webp"
+                                />
+                              </span>
+                            </div>
+                            <div className="image-gradient-border"></div>
+                          </div>
+                        </button>
+                        <div
+                          data-hd="w-c5pwh3yw"
+                          className="com-image-block p-absolute"
+                        >
+                          <div className="image-block-css p-relative full-width full-height full-mask-size mask-position">
+                            <div
+                              className="image-background p-absolute"
+                              role="img"
+                              aria-label=""
+                            ></div>
+                            <div className="image-gradient-border"></div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div
@@ -627,6 +630,7 @@ export default function App() {
                           </div>
                         </div>
                         <button
+                          onClick={onPhotoButtonClick}
                           type="button"
                           data-hd="w-r4bbxklt"
                           className="com-image-block p-absolute hr-photo"
@@ -638,6 +642,7 @@ export default function App() {
                                 style={{ position: "absolute", inset: "0" }}
                               >
                                 <img
+                                  onClick={onImageClick}
                                   alt="Chú rể Ngọc Hiếu"
                                   loading="lazy"
                                   decoding="async"
@@ -695,6 +700,7 @@ export default function App() {
                           </div>
                         </div>
                         <button
+                          onClick={onPhotoButtonClick}
                           type="button"
                           data-hd="w-58emprtq"
                           className="com-image-block p-absolute hr-photo"
@@ -706,6 +712,7 @@ export default function App() {
                                 style={{ position: "absolute", inset: "0" }}
                               >
                                 <img
+                                  onClick={onImageClick}
                                   alt="Cô dâu Lan Anh"
                                   loading="lazy"
                                   decoding="async"
@@ -1193,7 +1200,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div data-hd="w-g1qbffbt" className="com-section" data-section="">
+              {/* <div data-hd="w-g1qbffbt" className="com-section" data-section="">
                 <div className="section-wrapper full-width full-height p-relative">
                   <div className="section-background p-absolute full-width full-height"></div>
                   <div className="section-container full-height p-relative">
@@ -1364,334 +1371,214 @@ export default function App() {
                     </div>
                   </div>
                 </div>
+              </div> */}
+              <div className="gallery-title">
+                <h4>Gallery</h4>
               </div>
-              <div data-hd="w-akq1hp3b" className="com-section" data-section="">
+              <div data-hd="w-akq1hp3b" className="com-section image-group-1 mt-2! mb-2!" data-section="">
                 <div className="section-wrapper full-width full-height p-relative">
                   <div className="section-background p-absolute full-width full-height"></div>
                   <div className="section-container full-height p-relative">
                     <button
+                      onClick={onPhotoButtonClick}
                       type="button"
-                      data-hd="w-nqqdc52g"
                       className="com-image-block p-absolute hr-photo"
                       aria-label="Xem ảnh: Ngọc Hiếu và Lan Anh — ảnh 1"
                     >
-                      <div className="image-block-css p-relative full-width full-height full-mask-size mask-position">
-                        <div className="image-background p-absolute">
-                          <span style={{ position: "absolute", inset: "0" }}>
-                            <img
-                              alt="Ngọc Hiếu và Lan Anh — ảnh 1"
-                              loading="lazy"
-                              decoding="async"
-                              style={{
-                                position: "absolute",
-                                height: "100%",
-                                width: "100%",
-                                left: "0",
-                                top: "0",
-                                right: "0",
-                                bottom: "0",
-                                objectFit: "cover",
-                                objectPosition: "center",
-                                color: "transparent",
-                              }}
-                              src="/images/2.webp"
-                            />
-                          </span>
-                        </div>
-                        <div className="image-gradient-border"></div>
-                      </div>
+
+
+                      <img
+                        onClick={onImageClick}
+                        alt="Ngọc Hiếu và Lan Anh — ảnh 1"
+                        loading="lazy"
+                        decoding="async"
+                        src="/images/2.webp"
+                      />
+
+
                     </button>
                     <button
+                      onClick={onPhotoButtonClick}
                       type="button"
-                      data-hd="w-8ea7cm3t"
                       className="com-image-block p-absolute hr-photo"
                       aria-label="Xem ảnh: Ngọc Hiếu và Lan Anh — ảnh 2"
                     >
-                      <div className="image-block-css p-relative full-width full-height full-mask-size mask-position">
-                        <div className="image-background p-absolute">
-                          <span style={{ position: "absolute", inset: "0" }}>
-                            <img
-                              alt="Ngọc Hiếu và Lan Anh — ảnh 2"
-                              loading="lazy"
-                              decoding="async"
-                              style={{
-                                position: "absolute",
-                                height: "100%",
-                                width: "100%",
-                                left: "0",
-                                top: "0",
-                                right: "0",
-                                bottom: "0",
-                                objectFit: "cover",
-                                objectPosition: "center",
-                                color: "transparent",
-                              }}
-                              src="/images/3.jpg"
-                            />
-                          </span>
-                        </div>
-                        <div className="image-gradient-border"></div>
-                      </div>
+
+                      <img
+                        onClick={onImageClick}
+                        alt="Ngọc Hiếu và Lan Anh — ảnh 2"
+                        loading="lazy"
+                        decoding="async"
+                        src="/images/3.jpg"
+                      />
+
                     </button>
                   </div>
                 </div>
               </div>
-              <div data-hd="w-u142c3qv" className="com-section" data-section="">
+              <div data-hd="w-u142c3qv" className="com-section image-group-2 mb-2!" data-section="">
                 <div className="section-wrapper full-width full-height p-relative">
                   <div className="section-background p-absolute full-width full-height"></div>
                   <div className="section-container full-height p-relative">
                     <button
+                      onClick={onPhotoButtonClick}
                       type="button"
-                      data-hd="w-q61m13q1"
-                      className="com-image-block p-absolute hr-photo"
+                      className="com-image-block hr-photo"
                       aria-label="Xem ảnh: Ngọc Hiếu và Lan Anh — ảnh 3"
                     >
-                      <div className="image-block-css p-relative full-width full-height full-mask-size mask-position">
-                        <div className="image-background p-absolute">
-                          <span style={{ position: "absolute", inset: "0" }}>
-                            <img
-                              alt="Ngọc Hiếu và Lan Anh — ảnh 3"
-                              loading="lazy"
-                              decoding="async"
-                              style={{
-                                position: "absolute",
-                                height: "100%",
-                                width: "100%",
-                                left: "0",
-                                top: "0",
-                                right: "0",
-                                bottom: "0",
-                                objectFit: "cover",
-                                objectPosition: "center",
-                                color: "transparent",
-                              }}
-                              src="/images/5.jpg"
-                            />
-                          </span>
-                        </div>
-                        <div className="image-gradient-border"></div>
-                      </div>
+
+                      <img
+                        onClick={onImageClick}
+                        alt="Ngọc Hiếu và Lan Anh — ảnh 3"
+                        loading="lazy"
+                        decoding="async"
+                        src="/images/5.jpg"
+                      />
                     </button>
-                    <button
-                      type="button"
-                      data-hd="w-5clwmj41"
-                      className="com-image-block p-absolute hr-photo"
-                      aria-label="Xem ảnh: Ngọc Hiếu và Lan Anh — ảnh 3"
-                    >
-                      <div className="image-block-css p-relative full-width full-height full-mask-size mask-position">
-                        <div className="image-background p-absolute">
-                          <span style={{ position: "absolute", inset: "0" }}>
-                            <img
-                              alt="Ngọc Hiếu và Lan Anh — ảnh 3"
-                              loading="lazy"
-                              decoding="async"
-                              style={{
-                                position: "absolute",
-                                height: "100%",
-                                width: "100%",
-                                left: "0",
-                                top: "0",
-                                right: "0",
-                                bottom: "0",
-                                objectFit: "cover",
-                                objectPosition: "center",
-                                color: "transparent",
-                              }}
-                              src="/images/15.jpg"
-                            />
-                          </span>
-                        </div>
-                        <div className="image-gradient-border"></div>
-                      </div>
-                    </button>
-                    <button
-                      type="button"
-                      data-hd="w-zb99fbrh"
-                      className="com-image-block p-absolute hr-photo"
-                      aria-label="Xem ảnh: Ngọc Hiếu và Lan Anh — ảnh 5"
-                    >
-                      <div className="image-block-css p-relative full-width full-height full-mask-size mask-position">
-                        <div className="image-background p-absolute">
-                          <span style={{ position: "absolute", inset: "0" }}>
-                            <img
-                              alt="Ngọc Hiếu và Lan Anh — ảnh 5"
-                              loading="lazy"
-                              decoding="async"
-                              style={{
-                                position: "absolute",
-                                height: "100%",
-                                width: "100%",
-                                left: "0",
-                                top: "0",
-                                right: "0",
-                                bottom: "0",
-                                objectFit: "cover",
-                                objectPosition: "center",
-                                color: "transparent",
-                              }}
-                              src="/images/7.jpg"
-                            />
-                          </span>
-                        </div>
-                        <div className="image-gradient-border"></div>
-                      </div>
-                    </button>
+                    <div className="flex flex-col gap-2">
+                      <button
+                        onClick={onPhotoButtonClick}
+                        type="button"
+                        data-hd="w-5clwmj41"
+                        className="com-image-block p-absolute hr-photo"
+                        aria-label="Xem ảnh: Ngọc Hiếu và Lan Anh — ảnh 3"
+                      >
+                        <img
+                          onClick={onImageClick}
+                          alt="Ngọc Hiếu và Lan Anh — ảnh 3"
+                          loading="lazy"
+                          decoding="async"
+                          src="/images/15.jpg"
+                        />
+                      </button>
+                      <button
+                        onClick={onPhotoButtonClick}
+                        type="button"
+                        data-hd="w-zb99fbrh"
+                        className="com-image-block p-absolute hr-photo"
+                        aria-label="Xem ảnh: Ngọc Hiếu và Lan Anh — ảnh 5"
+                      >
+                        <img
+                          onClick={onImageClick}
+                          alt="Ngọc Hiếu và Lan Anh — ảnh 5"
+                          loading="lazy"
+                          decoding="async"
+                          src="/images/7.jpg"
+                        />
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div data-hd="w-992t5t0q" className="com-section" data-section="">
-                <div className="section-wrapper full-width full-height p-relative">
-                  <div className="section-background p-absolute full-width full-height"></div>
-                  <div className="section-container full-height p-relative">
-                    <button
-                      type="button"
-                      data-hd="w-24zrhaaq"
-                      className="com-image-block p-absolute hr-photo"
-                      aria-label="Xem ảnh: Ngọc Hiếu và Lan Anh — ảnh 6"
-                    >
-                      <div className="image-block-css p-relative full-width full-height full-mask-size mask-position">
-                        <div className="image-background p-absolute">
-                          <span style={{ position: "absolute", inset: "0" }}>
-                            <img
-                              alt="Ngọc Hiếu và Lan Anh — ảnh 6"
-                              loading="lazy"
-                              decoding="async"
-                              style={{
-                                position: "absolute",
-                                height: "100%",
-                                width: "100%",
-                                left: "0",
-                                top: "0",
-                                right: "0",
-                                bottom: "0",
-                                objectFit: "cover",
-                                objectPosition: "center",
-                                color: "transparent",
-                              }}
-                              src="/images/12.jpg"
-                            />
-                          </span>
-                        </div>
-                        <div className="image-gradient-border"></div>
-                      </div>
-                    </button>
-                    <button
-                      type="button"
-                      data-hd="w-bqle08a8"
-                      className="com-image-block p-absolute hr-photo"
-                      aria-label="Xem ảnh: Ngọc Hiếu và Lan Anh — ảnh 7"
-                    >
-                      <div className="image-block-css p-relative full-width full-height full-mask-size mask-position">
-                        <div className="image-background p-absolute">
-                          <span style={{ position: "absolute", inset: "0" }}>
-                            <img
-                              alt="Ngọc Hiếu và Lan Anh — ảnh 7"
-                              loading="lazy"
-                              decoding="async"
-                              style={{
-                                position: "absolute",
-                                height: "100%",
-                                width: "100%",
-                                left: "0",
-                                top: "0",
-                                right: "0",
-                                bottom: "0",
-                                objectFit: "cover",
-                                objectPosition: "center",
-                                color: "transparent",
-                              }}
-                              src="/images/9.jpg"
-                            />
-                          </span>
-                        </div>
-                        <div className="image-gradient-border"></div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
+              <div className="hr-extra-album mb-2!">
+                <button
+                  onClick={onPhotoButtonClick}
+                  type="button"
+                  aria-label="Xem ảnh: Ngọc Hiếu và Lan Anh — ảnh 6"
+                >
+                  <img
+                    onClick={onImageClick}
+                    alt="Ngọc Hiếu và Lan Anh — ảnh 6"
+                    loading="lazy"
+                    decoding="async"
+                    style={{
+                      position: "absolute",
+                      height: "100%",
+                      width: "100%",
+                      left: "0",
+                      top: "0",
+                      right: "0",
+                      bottom: "0",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                      color: "transparent",
+                    }}
+                    src="/images/12.jpg"
+                  />
+                </button>
+                <button
+                  onClick={onPhotoButtonClick}
+                  type="button"
+                  aria-label="Xem ảnh: Ngọc Hiếu và Lan Anh — ảnh 7"
+                >
+                  <img
+                    onClick={onImageClick}
+                    alt="Ngọc Hiếu và Lan Anh — ảnh 7"
+                    loading="lazy"
+                    decoding="async"
+                    style={{
+                      position: "absolute",
+                      height: "100%",
+                      width: "100%",
+                      left: "0",
+                      top: "0",
+                      right: "0",
+                      bottom: "0",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                      color: "transparent",
+                    }}
+                    src="/images/9.jpg"
+                  />
+                </button>
+                <button onClick={onPhotoButtonClick} type="button" aria-label="Xem ảnh thêm 1">
+                  <img
+                    onClick={onImageClick}
+                    alt="Ngọc Hiếu và Lan Anh — ảnh 8"
+                    loading="lazy"
+                    decoding="async"
+                    style={{
+                      position: "absolute",
+                      height: "100%",
+                      width: "100%",
+                      left: "0",
+                      top: "0",
+                      right: "0",
+                      bottom: "0",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                      color: "transparent",
+                    }}
+                    src="/images/10.jpg"
+                  />
+                </button>
+                <button onClick={onPhotoButtonClick} type="button" aria-label="Xem ảnh thêm 2">
+                  <img
+                    onClick={onImageClick}
+                    alt="Ngọc Hiếu và Lan Anh — ảnh 9"
+                    loading="lazy"
+                    decoding="async"
+                    style={{
+                      position: "absolute",
+                      height: "100%",
+                      width: "100%",
+                      left: "0",
+                      top: "0",
+                      right: "0",
+                      bottom: "0",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                      color: "transparent",
+                    }}
+                    src="/images/11.jpg"
+                  />
+                </button>
               </div>
-              <div className="hr-extra-album">
-                <button type="button" aria-label="Xem ảnh thêm 1">
-                  <span style={{ position: "absolute", inset: "0" }}>
-                    <img
-                      alt="Ngọc Hiếu và Lan Anh — ảnh 8"
-                      loading="lazy"
-                      decoding="async"
-                      style={{
-                        position: "absolute",
-                        height: "100%",
-                        width: "100%",
-                        left: "0",
-                        top: "0",
-                        right: "0",
-                        bottom: "0",
-                        objectFit: "cover",
-                        objectPosition: "center",
-                        color: "transparent",
-                      }}
-                      src="/images/10.jpg"
-                    />
-                  </span>
-                </button>
-                <button type="button" aria-label="Xem ảnh thêm 2">
-                  <span style={{ position: "absolute", inset: "0" }}>
-                    <img
-                      alt="Ngọc Hiếu và Lan Anh — ảnh 9"
-                      loading="lazy"
-                      decoding="async"
-                      style={{
-                        position: "absolute",
-                        height: "100%",
-                        width: "100%",
-                        left: "0",
-                        top: "0",
-                        right: "0",
-                        bottom: "0",
-                        objectFit: "cover",
-                        objectPosition: "center",
-                        color: "transparent",
-                      }}
-                      src="/images/11.jpg"
-                    />
-                  </span>
-                </button>
-                {/* <button type="button" aria-label="Xem ảnh thêm 3">
-                  <span style={{ position: "absolute", inset: "0" }}>
-                    <img
-                      alt="Ngọc Hiếu và Lan Anh — ảnh 10"
-                      loading="lazy"
-                      decoding="async"
-                      style={{
-                        position: "absolute",
-                        height: "100%",
-                        width: "100%",
-                        left: "0",
-                        top: "0",
-                        right: "0",
-                        bottom: "0",
-                        objectFit: "cover",
-                        objectPosition: "center",
-                        color: "transparent",
-                      }}
-                      src="/demo/hoa-do-nhung/reference/w-40oxcrfo.jpg"
-                    />
-                  </span>
-                </button> */}
-              </div>
-              <button type="button" aria-label="Xem ảnh thêm 3">
-                    <img
-                      alt="Ngọc Hiếu và Lan Anh — ảnh 10"
-                      loading="lazy"
-                      decoding="async"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        objectPosition: "center",
-                      }}
-                      src="/images/14.webp"
-                    />
-                </button>
+              <button onClick={onPhotoButtonClick} type="button" aria-label="Xem ảnh thêm 3">
+                <img
+                  onClick={onImageClick}
+                  alt="Ngọc Hiếu và Lan Anh — ảnh 10"
+                  loading="lazy"
+                  decoding="async"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center",
+                  }}
+                  src="/images/14.webp"
+                />
+              </button>
               <div>
 
               </div>
@@ -1806,7 +1693,7 @@ export default function App() {
         {/* --- Audio --- */}
         <audio
           ref={audioRef}
-          src="/templates/hoa-do-nhung/reference/music.mp3"
+          src="/music/Call of Silence_Animenz_ Hiroyuki Sawano.mp3"
           loop
           preload="none"
         ></audio>
@@ -1826,7 +1713,7 @@ export default function App() {
             height="44"
             decoding="async"
             style={{ color: "transparent" }}
-            src="/templates/hoa-do-nhung/reference/play.png"
+            src={playing ? "/templates/hoa-do-nhung/reference/pause.gif" : "/templates/hoa-do-nhung/reference/play.png"}
           />
         </button>
       </div>
