@@ -1,11 +1,12 @@
-import { useRef, useState, type FormEvent, type MouseEvent } from "react";
+import { useRef, useState, type MouseEvent } from "react";
 import "./invitation.css";
+
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 
 export default function App() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
   const [photo, setPhoto] = useState<{ src: string; alt: string } | null>(null);
-  const [rsvpSent, setRsvpSent] = useState(false);
 
   function toggleMusic() {
     const audio = audioRef.current;
@@ -28,11 +29,6 @@ export default function App() {
   function onPhotoButtonClick(event: MouseEvent<HTMLButtonElement>) {
     if (event.detail !== 0 || event.target instanceof HTMLImageElement) return;
     event.currentTarget.querySelector("img")?.click();
-  }
-
-  function onSubmitRsvp(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setRsvpSent(true);
   }
 
   return (
@@ -122,7 +118,7 @@ export default function App() {
                                     objectPosition: "center",
                                     color: "transparent",
                                   }}
-                                  src="/images/16.jpg"
+                                  src={asset("images/16.jpg")}
                                 />
                               </span>
                             </div>
@@ -159,7 +155,7 @@ export default function App() {
                                     objectPosition: "center",
                                     color: "transparent",
                                   }}
-                                  src="/images/17.webp"
+                                  src={asset("images/17.webp")}
                                 />
                               </span>
                             </div>
@@ -196,7 +192,7 @@ export default function App() {
                                     objectPosition: "center",
                                     color: "transparent",
                                   }}
-                                  src="/images/18.webp"
+                                  src={asset("images/18.webp")}
                                 />
                               </span>
                             </div>
@@ -454,7 +450,7 @@ export default function App() {
                                     objectPosition: "center",
                                     color: "transparent",
                                   }}
-                                  src="/images/2.webp"
+                                  src={asset("images/2.webp")}
                                 />
                               </span>
                             </div>
@@ -658,7 +654,7 @@ export default function App() {
                                     objectPosition: "center",
                                     color: "transparent",
                                   }}
-                                  src="/images/1.webp"
+                                  src={asset("images/1.webp")}
                                 />
                               </span>
                             </div>
@@ -728,7 +724,7 @@ export default function App() {
                                     objectPosition: "center",
                                     color: "transparent",
                                   }}
-                                  src="/images/6.webp"
+                                  src={asset("images/6.webp")}
                                 />
                               </span>
                             </div>
@@ -1392,7 +1388,7 @@ export default function App() {
                         alt="Ngọc Hiếu và Lan Anh — ảnh 1"
                         loading="lazy"
                         decoding="async"
-                        src="/images/2.webp"
+                        src={asset("images/2.webp")}
                       />
 
 
@@ -1409,7 +1405,7 @@ export default function App() {
                         alt="Ngọc Hiếu và Lan Anh — ảnh 2"
                         loading="lazy"
                         decoding="async"
-                        src="/images/3.jpg"
+                        src={asset("images/3.jpg")}
                       />
 
                     </button>
@@ -1432,7 +1428,7 @@ export default function App() {
                         alt="Ngọc Hiếu và Lan Anh — ảnh 3"
                         loading="lazy"
                         decoding="async"
-                        src="/images/5.jpg"
+                        src={asset("images/5.jpg")}
                       />
                     </button>
                     <div className="flex flex-col gap-2">
@@ -1448,7 +1444,7 @@ export default function App() {
                           alt="Ngọc Hiếu và Lan Anh — ảnh 3"
                           loading="lazy"
                           decoding="async"
-                          src="/images/15.jpg"
+                          src={asset("images/15.jpg")}
                         />
                       </button>
                       <button
@@ -1463,7 +1459,7 @@ export default function App() {
                           alt="Ngọc Hiếu và Lan Anh — ảnh 5"
                           loading="lazy"
                           decoding="async"
-                          src="/images/7.jpg"
+                          src={asset("images/7.jpg")}
                         />
                       </button>
                     </div>
@@ -1493,7 +1489,7 @@ export default function App() {
                       objectPosition: "center",
                       color: "transparent",
                     }}
-                    src="/images/12.jpg"
+                    src={asset("images/12.jpg")}
                   />
                 </button>
                 <button
@@ -1518,7 +1514,7 @@ export default function App() {
                       objectPosition: "center",
                       color: "transparent",
                     }}
-                    src="/images/9.jpg"
+                    src={asset("images/9.jpg")}
                   />
                 </button>
                 <button onClick={onPhotoButtonClick} type="button" aria-label="Xem ảnh thêm 1">
@@ -1539,7 +1535,7 @@ export default function App() {
                       objectPosition: "center",
                       color: "transparent",
                     }}
-                    src="/images/10.jpg"
+                    src={asset("images/10.jpg")}
                   />
                 </button>
                 <button onClick={onPhotoButtonClick} type="button" aria-label="Xem ảnh thêm 2">
@@ -1560,7 +1556,7 @@ export default function App() {
                       objectPosition: "center",
                       color: "transparent",
                     }}
-                    src="/images/11.jpg"
+                    src={asset("images/11.jpg")}
                   />
                 </button>
               </div>
@@ -1576,7 +1572,7 @@ export default function App() {
                     objectFit: "cover",
                     objectPosition: "center",
                   }}
-                  src="/images/14.webp"
+                  src={asset("images/14.webp")}
                 />
               </button>
               <div>
@@ -1693,7 +1689,7 @@ export default function App() {
         {/* --- Audio --- */}
         <audio
           ref={audioRef}
-          src="/music/Call of Silence_Animenz_ Hiroyuki Sawano.mp3"
+          src={asset("music/Call of Silence_Animenz_ Hiroyuki Sawano.mp3")}
           loop
           preload="none"
         ></audio>
@@ -1713,7 +1709,7 @@ export default function App() {
             height="44"
             decoding="async"
             style={{ color: "transparent" }}
-            src={playing ? "/templates/hoa-do-nhung/reference/pause.gif" : "/templates/hoa-do-nhung/reference/play.png"}
+            src={playing ? asset("templates/hoa-do-nhung/reference/pause.gif") : asset("templates/hoa-do-nhung/reference/play.png")}
           />
         </button>
       </div>
@@ -1727,11 +1723,6 @@ export default function App() {
         >
           <img src={photo.src} alt={photo.alt} />
         </button>
-      ) : null}
-      {rsvpSent ? (
-        <div className="invite-toast" role="status">
-          Đã gửi xác nhận. Cảm ơn bạn!
-        </div>
       ) : null}
     </>
   );
