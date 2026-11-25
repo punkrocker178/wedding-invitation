@@ -2931,11 +2931,40 @@
     18px/1.5 HdnRefFont7,
     serif;
 }
-.hdn-reference .hr-reveal:not(.hr-visible) {
+.hdn-reference [data-motion]:not([data-motion=""]):not([hidden]):not(.hr-visible) {
   opacity: 0;
 }
-.hdn-reference .hr-visible {
-  animation: hr-reveal var(--hr-duration, 1s) ease both;
+.hdn-reference .hr-visible[data-motion] {
+  animation-duration: var(--hr-duration, 1s);
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+.hdn-reference .hr-visible[data-motion="fadeInUp"] {
+  animation-name: hr-fadeInUp;
+}
+.hdn-reference .hr-visible[data-motion="fadeInDown"] {
+  animation-name: hr-fadeInDown;
+}
+.hdn-reference .hr-visible[data-motion="fadeInLeft"] {
+  animation-name: hr-fadeInLeft;
+}
+.hdn-reference .hr-visible[data-motion="fadeInRight"] {
+  animation-name: hr-fadeInRight;
+}
+.hdn-reference .hr-visible[data-motion="fadeInBottomRight"] {
+  animation-name: hr-fadeInBottomRight;
+}
+.hdn-reference .hr-visible[data-motion="slideInUp"] {
+  animation-name: hr-slideInUp;
+}
+.hdn-reference .hr-visible[data-motion="slideInDown"] {
+  animation-name: hr-slideInDown;
+}
+.hdn-reference .hr-visible[data-motion="slideInLeft"] {
+  animation-name: hr-slideInLeft;
+}
+.hdn-reference .hr-visible[data-motion="zoomIn"] {
+  animation-name: hr-zoomIn;
 }
 .hdn-reference [data-hd="w-9t90yjc1"] {
   overflow: hidden;
@@ -2946,14 +2975,94 @@
 .hdn-reference [data-hd="w-9t90yjc1"].hr-visible > .group-container {
   animation: hr-slide-from-slot var(--hr-duration, 5s) ease-out both;
 }
-@keyframes hr-reveal {
-  0% {
+@keyframes hr-fadeInUp {
+  from {
     opacity: 0;
-    translate: 0 18px;
+    translate: 0 28px;
   }
   to {
     opacity: 1;
-    translate: 0;
+    translate: 0 0;
+  }
+}
+@keyframes hr-fadeInDown {
+  from {
+    opacity: 0;
+    translate: 0 -28px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes hr-fadeInLeft {
+  from {
+    opacity: 0;
+    translate: -28px 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes hr-fadeInRight {
+  from {
+    opacity: 0;
+    translate: 28px 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes hr-fadeInBottomRight {
+  from {
+    opacity: 0;
+    translate: 28px 28px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes hr-slideInUp {
+  from {
+    opacity: 0;
+    translate: 0 48px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes hr-slideInDown {
+  from {
+    opacity: 0;
+    translate: 0 -48px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes hr-slideInLeft {
+  from {
+    opacity: 0;
+    translate: -48px 0;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes hr-zoomIn {
+  from {
+    opacity: 0;
+    scale: 0.82;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
   }
 }
 @keyframes hr-slide-from-slot {
