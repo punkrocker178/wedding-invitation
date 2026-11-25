@@ -1756,14 +1756,23 @@ export default function App() {
       </div>
       {/* --- Photo Lightbox --- */}
       {photo ? (
-        <button
-          type="button"
+        <div
           className="invite-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={photo.alt}
           onClick={() => setPhoto(null)}
-          aria-label="Đóng ảnh"
         >
+          <button
+            type="button"
+            className="invite-lightbox-close"
+            onClick={() => setPhoto(null)}
+            aria-label="Đóng ảnh"
+          >
+            ×
+          </button>
           <img src={photo.src} alt={photo.alt} />
-        </button>
+        </div>
       ) : null}
       {/* {rsvpSent ? (
         <div className="invite-toast" role="status">
