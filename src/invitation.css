@@ -2795,16 +2795,38 @@
   position: fixed;
   inset: 0;
   z-index: 80;
-  place-items: center;
+  display: flex;
+  justify-content: center;
   padding: 24px;
+  overflow: auto;
   background: #1a0a0ae6;
   border: 0;
   cursor: zoom-out;
 }
 .invite-lightbox img {
   max-width: min(920px, 100%);
-  max-height: 100%;
-  object-fit: contain;
+  height: auto;
+  margin: auto;
+}
+.invite-lightbox-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #fff7ec;
+  color: #890000;
+  font: 32px/1 Arial, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 10px #00000066;
+}
+.invite-lightbox-close:focus-visible {
+  outline: 2px solid #fff7ec;
+  outline-offset: 3px;
 }
 
 /* Flex layout for the opening section only. */
