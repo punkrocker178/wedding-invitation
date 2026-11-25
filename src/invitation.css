@@ -2969,12 +2969,6 @@
 .hdn-reference [data-hd="w-9t90yjc1"] {
   overflow: hidden;
 }
-.hdn-reference [data-hd="w-9t90yjc1"].hr-visible {
-  animation: none;
-}
-.hdn-reference [data-hd="w-9t90yjc1"].hr-visible > .group-container {
-  animation: hr-slide-from-slot var(--hr-duration, 5s) ease-out both;
-}
 @keyframes hr-fadeInUp {
   from {
     opacity: 0;
@@ -3065,14 +3059,6 @@
     scale: 1;
   }
 }
-@keyframes hr-slide-from-slot {
-  0% {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
 .hdn-reference.hr-dialog {
   color: #890000;
   text-align: center;
@@ -3130,8 +3116,7 @@
   background: #890000;
 }
 @media (prefers-reduced-motion: reduce) {
-  .hdn-reference [data-motion],
-  .hdn-reference [data-hd="w-9t90yjc1"] > .group-container {
+  .hdn-reference [data-motion] {
     opacity: 1;
     transition: none !important;
     animation: none !important;
