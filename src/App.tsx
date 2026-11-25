@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState, type FormEvent, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import "./invitation.css";
 
 export default function App() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
   const [photo, setPhoto] = useState<{ src: string; alt: string } | null>(null);
-  const [rsvpSent, setRsvpSent] = useState(false);
+  // const [rsvpSent, setRsvpSent] = useState(false);
 
   useEffect(() => {
     const root = document.querySelector(".hdn-reference");
@@ -65,10 +65,10 @@ export default function App() {
     event.currentTarget.querySelector("img")?.click();
   }
 
-  function onSubmitRsvp(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setRsvpSent(true);
-  }
+  // function onSubmitRsvp(event: FormEvent<HTMLFormElement>) {
+  //   event.preventDefault();
+  //   setRsvpSent(true);
+  // }
 
   return (
     <>
@@ -1763,11 +1763,11 @@ export default function App() {
           <img src={photo.src} alt={photo.alt} />
         </button>
       ) : null}
-      {rsvpSent ? (
+      {/* {rsvpSent ? (
         <div className="invite-toast" role="status">
           Đã gửi xác nhận. Cảm ơn bạn!
         </div>
-      ) : null}
+      ) : null} */}
     </>
   );
 }
