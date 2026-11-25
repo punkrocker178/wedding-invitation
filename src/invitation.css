@@ -1,21 +1,3 @@
-:root {
-  --color-pink: #fae5e0;
-  --color-red: #9a1b22;
-  --color-text-pink: #b2545c;
-}
-
-.bg-envelope-red {
-  background-color: var(--color-red);
-}
-
-.bg-envelope-pink {
-  background-color: var(--color-pink);
-}
-
-.bg-envelope-text-pink {
-  background-color: var(--color-text-pink);
-}
-
 .hr-music {
   z-index: 40;
   -webkit-backdrop-filter: blur(4px);
@@ -166,9 +148,6 @@
 .hdn-reference .p-relative {
   position: relative;
 }
-.hdn-reference .d-none {
-  display: none;
-}
 .hdn-reference a:link {
   color: inherit;
 }
@@ -193,33 +172,6 @@
   word-break: break-word;
   -webkit-background-clip: text !important;
   background-clip: text !important;
-}
-@keyframes hr-rotate-3-out {
-  0% {
-    transform: rotateY(0);
-  }
-  to {
-    transform: rotateY(-180deg);
-  }
-}
-@keyframes hr-rotate-3-in {
-  0% {
-    transform: rotateY(180deg);
-  }
-  to {
-    transform: rotateY(0);
-  }
-}
-@keyframes hr-caret-popping {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
 }
 .hdn-reference .line-css {
   padding: 8px 0;
@@ -253,78 +205,6 @@
   text-align: unset;
   display: table-cell;
 }
-.hdn-reference .input-css {
-  overflow: hidden;
-}
-.hdn-reference .input-css input {
-  color: inherit;
-  text-align: inherit;
-  letter-spacing: inherit;
-  background: 0 0;
-  border-radius: 0;
-  padding-left: 10px;
-}
-.hdn-reference .input-css input::placeholder {
-  text-transform: var(--placeholder-transform);
-  -webkit-text-decoration: var(--placeholder-decoration);
-  text-decoration: var(--placeholder-decoration);
-}
-.hdn-reference .select-css {
-  padding-top: 0;
-  padding-bottom: 0;
-  overflow: hidden;
-}
-.hdn-reference .select-css select {
-  text-align: inherit;
-  letter-spacing: inherit;
-}
-.hdn-reference .select-css option:first-child {
-  color: #979797;
-}
-.hdn-reference .chevron {
-  pointer-events: none;
-  color: #979797;
-  width: 26px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-.hdn-reference .chevron .icon {
-  border: 2px solid #0000;
-  border-radius: 100px;
-  width: 14px;
-  height: 14px;
-  display: block;
-  position: absolute;
-  top: calc(50% - 7px);
-  left: calc(50% - 7px);
-}
-.hdn-reference .chevron .icon:after {
-  content: "";
-  border-bottom: 2px solid;
-  border-right: 2px solid;
-  width: 6px;
-  height: 6px;
-  display: block;
-  position: absolute;
-  transform: rotate(45deg);
-}
-.hdn-reference .select-css select {
-  appearance: none;
-  color: #979797;
-  background: 0 0;
-  padding-left: 10px;
-  padding-right: 26px;
-}
-@keyframes hr-around {
-  0% {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .hdn-reference .button-loader,
 .hdn-reference .button-loader:before,
 .hdn-reference .button-loader:after {
@@ -355,34 +235,6 @@
 }
 .hdn-reference .button-loader:after {
   left: 3.5em;
-}
-@keyframes hr-bblFadInOut {
-  0%,
-  80%,
-  to {
-    box-shadow: 0 2.5em 0 -1.3em;
-  }
-  40% {
-    box-shadow: 0 2.5em;
-  }
-}
-.hdn-reference .popup-wrapper {
-  top: 0;
-  left: 0;
-}
-.hdn-reference .popup-background {
-  overflow: hidden;
-}
-.hdn-reference .popup-backdrop {
-  z-index: 1000000;
-  background: #00000080;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-.hdn-reference .popup-center {
-  margin: auto;
-  inset: 0;
 }
 .hdn-reference .section-container {
   max-width: 420px;
@@ -1691,11 +1543,6 @@
   top: 54.5px;
   left: 0.5px;
 }
-.hdn-reference [data-hd="w-falxo8eo"] .input-css {
-  color: #000;
-  border-style: groove;
-  border-radius: 107px;
-}
 .hdn-reference [data-hd="w-falxo8eo"] input {
   color: #000;
   background: #fff9;
@@ -1705,11 +1552,6 @@
   height: 43px;
   top: 112px;
   left: 0.5px;
-}
-.hdn-reference [data-hd="w-wwnpgcpd"] .input-css {
-  color: #000;
-  border-style: groove;
-  border-radius: 107px;
 }
 .hdn-reference [data-hd="w-wwnpgcpd"] input {
   color: #000;
@@ -1721,28 +1563,15 @@
   top: 166px;
   left: 0.5px;
 }
-.hdn-reference [data-hd="w-3pmym5fr"] .select-css {
-  color: #000;
-  border-style: groove;
-  border-radius: 107px;
-}
 .hdn-reference [data-hd="w-3pmym5fr"] select {
   color: #000;
   background: #fff9;
-}
-.hdn-reference [data-hd="w-3pmym5fr"] .chevron .icon {
-  color: #000;
 }
 .hdn-reference [data-hd="w-aei6ku3p"] {
   width: 341px;
   height: 43px;
   top: 0;
   left: 0;
-}
-.hdn-reference [data-hd="w-aei6ku3p"] .input-css {
-  color: #000;
-  border-style: groove;
-  border-radius: 107px;
 }
 .hdn-reference [data-hd="w-aei6ku3p"] input {
   color: #000;
@@ -2185,12 +2014,6 @@
   height: 500px;
   position: fixed;
 }
-.hdn-reference [data-hd="w-__popup_default__"] .popup-background {
-  color: #454040;
-  background: #fff;
-  border: 1px solid #890000;
-  border-radius: 13px;
-}
 .hdn-reference [data-hd="w-tdwxke6z"] {
   z-index: 1;
   width: 29px;
@@ -2261,13 +2084,6 @@
   width: 400px;
   height: 177px;
   position: fixed;
-}
-.hdn-reference [data-hd="w-6as8q4nj"] .popup-background {
-  background: url(/templates/hoa-do-nhung/reference/asset-26.png) 50% / cover
-    no-repeat content-box border-box;
-  border-style: solid;
-  border-color: #e5e7eb;
-  border-radius: 20px;
 }
 .hdn-reference [data-hd="w-bsge9rfz"] {
   width: 152px;
@@ -2430,17 +2246,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-}
-@keyframes hr-heartFlash {
-  0%,
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    opacity: 0.3;
-    transform: translate(-50%, -50%) scale(1.15);
-  }
 }
 @font-face {
   font-family: HdnRefFont0;
@@ -2688,28 +2493,6 @@
 .hdn-reference .wc-cal-empty {
   opacity: 0;
 }
-.hdn-reference .wc-cal-heart {
-  z-index: 1;
-  pointer-events: none;
-  width: 40px;
-  height: 40px;
-  animation: 4s ease-in-out infinite hr-calendar-flash;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-@keyframes hr-calendar-flash {
-  0%,
-  to {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    opacity: 0.3;
-    transform: translate(-50%, -50%) scale(1.15);
-  }
-}
 .hr-page {
   background-color: #fae5e0;
   min-height: 100svh;
@@ -2772,14 +2555,6 @@
 .hdn-reference .hr-photo img {
   display: block;
 }
-.hdn-reference .hr-submit > .button-css {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-.hdn-reference .hr-submit > .button-css > .button-text {
-  display: block;
-}
 .hdn-reference input,
 .hdn-reference select {
   color: inherit;
@@ -2792,32 +2567,6 @@
 .hdn-reference input::placeholder {
   color: inherit;
   opacity: 1;
-}
-.hdn-reference .hr-form-status {
-  text-align: center;
-  color: #890000;
-  width: 100%;
-  font-size: 13px;
-  position: absolute;
-  top: 100%;
-}
-.hdn-reference .hr-response {
-  z-index: 5;
-  text-align: center;
-  color: #890000;
-  background: #fff7ec;
-  place-content: center;
-  gap: 18px;
-  padding: 20px;
-  font-size: 18px;
-  display: grid;
-  position: absolute;
-  inset: 0;
-}
-.hdn-reference .hr-response button {
-  border: 1px solid #890000;
-  border-radius: 20px;
-  padding: 8px;
 }
 .hdn-reference .hr-calendar-heart {
   fill: #c61f42;
@@ -2832,72 +2581,6 @@
   width: 100%;
   height: 100%;
   display: block;
-}
-.hdn-reference .hr-extra {
-  text-align: center;
-  white-space: pre-line;
-  padding: 20px;
-  font:
-    15px/1.5 HdnRefFont6,
-    serif;
-}
-.hdn-reference .hr-extra h2 {
-  font:
-    27px/1.5 Hdn Ref Cormorant Upright,
-    serif;
-}
-.hdn-reference .hr-extra-party .hr-party-time {
-  font-size: 16px;
-}
-.hdn-reference .hr-extra-party .hr-party-date {
-  letter-spacing: 5px;
-  font-size: 18px;
-}
-.hdn-reference .hr-extra-party .hr-party-lunar {
-  font-size: 15px;
-}
-.hdn-reference .hr-extra-party .hr-party-venue {
-  text-transform: uppercase;
-  font-size: 16px;
-}
-.hdn-reference .hr-extra-party .hr-party-address {
-  font-size: 15px;
-}
-.hdn-reference .hr-extra p {
-  margin: 12px 0;
-}
-.hdn-reference .hr-extra-party {
-  color: #fff;
-  background: #7a100c;
-}
-.hdn-reference .hr-extra-party .hr-map {
-  height: 260px;
-  margin-top: 20px;
-}
-.hdn-reference .hr-extra-party a {
-  color: inherit;
-  text-decoration: underline;
-}
-.hdn-reference .hr-ceremony-map {
-  text-align: center;
-  margin: 20px 0 30px;
-}
-.hdn-reference .hr-ceremony-map .hr-map {
-  box-sizing: border-box;
-  background: #fff;
-  width: 390px;
-  max-width: 100%;
-  height: 250px;
-  margin: 0 auto;
-  padding: 5px;
-  box-shadow: 0 4px 4px #00000040;
-}
-.hdn-reference .hr-ceremony-map a {
-  color: #890000;
-  font:
-    15px/1.5 HdnRefFont6,
-    serif;
-  text-decoration: underline;
 }
 .hdn-reference .hr-extra-album {
   grid-template-columns: 1fr 1fr;
@@ -2924,15 +2607,6 @@
 }
 .hdn-reference[data-embed-map="true"] [data-hd="w-22l073b4"] .image-background {
   top: -503px;
-}
-.hdn-reference .hr-guest {
-  text-align: center;
-  color: #fff;
-  background: #7a100c;
-  padding: 12px;
-  font:
-    18px/1.5 HdnRefFont7,
-    serif;
 }
 .hdn-reference [data-motion]:not([data-motion=""]):not([hidden]):not(.hr-visible) {
   opacity: 0;
@@ -3062,62 +2736,6 @@
     scale: 1;
   }
 }
-.hdn-reference.hr-dialog {
-  color: #890000;
-  text-align: center;
-  background: #fff7ec;
-  border: 1px solid #890000;
-  border-radius: 8px;
-  width: min(390px, 100vw - 24px);
-  max-height: 90svh;
-  margin: auto;
-  padding: 28px;
-  font:
-    20px/1.6 HdnRefFont7,
-    serif;
-  position: fixed;
-  inset: 0;
-  overflow: auto;
-}
-.hr-dialog::backdrop {
-  background: #00000080;
-}
-.hdn-reference.hr-dialog h2 {
-  margin-bottom: 16px;
-  font:
-    32px/1.6 HdnRefFont2,
-    cursive;
-}
-.hdn-reference.hr-dialog .hr-close {
-  color: #890000;
-  width: 32px;
-  height: 32px;
-  font:
-    28px/1 Arial,
-    sans-serif;
-  position: absolute;
-  top: 4px;
-  right: 8px;
-}
-.hdn-reference .hr-qr {
-  width: 260px;
-  max-width: 100%;
-  height: auto;
-  margin: 10px auto;
-}
-.hdn-reference .hr-copy,
-.hdn-reference .hr-gift-tabs button {
-  color: #890000;
-  border: 1px solid #890000;
-  border-radius: 20px;
-  margin: 8px 4px;
-  padding: 8px 14px;
-  font-size: 15px;
-}
-.hdn-reference .hr-gift-tabs button[aria-pressed="true"] {
-  color: #fff;
-  background: #890000;
-}
 @media (prefers-reduced-motion: reduce) {
   .hdn-reference [data-motion] {
     opacity: 1;
@@ -3187,17 +2805,6 @@
   max-width: min(920px, 100%);
   max-height: 100%;
   object-fit: contain;
-}
-.invite-toast {
-  position: fixed;
-  left: 50%;
-  bottom: 24px;
-  z-index: 60;
-  transform: translateX(-50%);
-  padding: 12px 18px;
-  background: #890000;
-  color: #fff7ec;
-  font-family: "Hdn Ref Roboto", sans-serif;
 }
 
 /* Flex layout for the opening section only. */
