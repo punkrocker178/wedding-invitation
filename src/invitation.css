@@ -1,3 +1,21 @@
+:root {
+  --color-pink: #fae5e0;
+  --color-red: #9a1b22;
+  --color-text-pink: #b2545c;
+}
+
+.bg-envelope-red {
+  background-color: var(--color-red);
+}
+
+.bg-envelope-pink {
+  background-color: var(--color-pink);
+}
+
+.bg-envelope-text-pink {
+  background-color: var(--color-text-pink);
+}
+
 .hr-music {
   z-index: 40;
   -webkit-backdrop-filter: blur(4px);
@@ -1030,9 +1048,6 @@
     0 4px 4px #00000040;
 }
 .hdn-reference [data-hd="w-8u3ieusn"] .image-background {
-  --type: 0;
-  background: url(/templates/hoa-do-nhung/reference/asset-10.png) 50% / cover
-    no-repeat content-box border-box;
   width: 626.798px;
   height: 1193.9px;
   top: 0;
@@ -1101,9 +1116,6 @@
     0 4px 4px #00000040;
 }
 .hdn-reference [data-hd="w-5vz9mv54"] .image-background {
-  --type: 0;
-  background: url(/templates/hoa-do-nhung/reference/asset-10.png) 50% / cover
-    no-repeat content-box border-box;
   width: 577.744px;
   height: 1100.46px;
   top: 0;
@@ -1289,15 +1301,15 @@
   height: 446px;
   top: 0;
   left: 0;
+  /* background: url(/templates/hoa-do-nhung/reference/asset-00.png) 50% / cover
+    no-repeat content-box border-box; */
+    background-color: #9a1b22;
 }
 .hdn-reference [data-hd="w-kji2sg1m"] .image-block-css {
   border: 0 solid #e5e7eb;
   position: absolute;
 }
 .hdn-reference [data-hd="w-kji2sg1m"] .image-background {
-  --type: 0;
-  background: url(/templates/hoa-do-nhung/reference/asset-10.png) 50% / cover
-    no-repeat content-box border-box;
   width: 420px;
   height: 800px;
   top: 0;
@@ -1439,9 +1451,6 @@
   position: absolute;
 }
 .hdn-reference [data-hd="w-22l073b4"] .image-background {
-  --type: 0;
-  background: url(/templates/hoa-do-nhung/reference/asset-10.png) 50% / cover
-    no-repeat content-box border-box;
   width: 420px;
   height: 800px;
   top: -446px;
@@ -1572,9 +1581,6 @@
   position: absolute;
 }
 .hdn-reference [data-hd="w-0de0wxol"] .image-background {
-  --type: 0;
-  background: url(/templates/hoa-do-nhung/reference/asset-10.png) 50% / cover
-    no-repeat content-box border-box;
   width: 420px;
   height: 800px;
   top: 0;
@@ -1592,9 +1598,6 @@
   position: absolute;
 }
 .hdn-reference [data-hd="w-g1on2txo"] .image-background {
-  --type: 0;
-  background: url(/templates/hoa-do-nhung/reference/asset-13.png) 50% / cover
-    no-repeat content-box border-box;
   width: 420.424px;
   height: 801.434px;
   top: -22.9578px;
@@ -3196,21 +3199,6 @@
   color: #fff7ec;
   font-family: "Hdn Ref Roboto", sans-serif;
 }
-body {
-  margin: 0;
-  background: #fff;
-}
-.envelope-red {
-  background-color: #9a1b22;
-}
-
-.envelope-pink {
-  background-color: #fae5e0;
-}
-
-.envelope-text-pink {
-  background-color: #b2545c;
-}
 
 /* Flex layout for the opening section only. */
 .hdn-reference [data-hd="w-fj4da0n4"],
@@ -3227,9 +3215,10 @@ body {
   width: 100%;
   height: auto;
   padding: 28px 18px 36px;
-  background:
+  /* background:
     url(/templates/hoa-do-nhung/reference/asset-00.png) center / cover no-repeat,
-    #7a100c;
+    #9a1b22; */
+    background-color: #9a1b22;
 }
 .hdn-reference [data-hd="w-fj4da0n4"] .group-container {
   display: flex;

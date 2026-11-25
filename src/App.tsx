@@ -671,7 +671,6 @@ export default function App() {
                           type="button"
                           data-hd="w-r4bbxklt"
                           className="com-image-block p-absolute hr-photo"
-                          aria-label="Xem ảnh: Chú rể Anh Tú"
                         >
                           <div className="image-block-css p-relative full-width full-height full-mask-size mask-position">
                             <div className="image-background p-absolute">
@@ -1446,7 +1445,7 @@ export default function App() {
                         alt="Ngọc Hiếu và Lan Anh — ảnh 2"
                         loading="lazy"
                         decoding="async"
-                        src={asset("images/3.jpg")}
+                        src={asset("images/3.webp")}
                       />
 
                     </button>
