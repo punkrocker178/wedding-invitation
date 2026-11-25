@@ -1,4 +1,4 @@
-import { useRef, useState, type FormEvent, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent, type MouseEvent } from "react";
 import "./invitation.css";
 
 export default function App() {
@@ -6,6 +6,41 @@ export default function App() {
   const [playing, setPlaying] = useState(false);
   const [photo, setPhoto] = useState<{ src: string; alt: string } | null>(null);
   const [rsvpSent, setRsvpSent] = useState(false);
+
+  useEffect(() => {
+    const root = document.querySelector(".hdn-reference");
+    if (!root) return;
+
+    const nodes = [...root.querySelectorAll<HTMLElement>("[data-motion]")].filter(
+      (el) => el.dataset.motion?.trim(),
+    );
+
+    for (const el of nodes) {
+      const duration = el.dataset.duration?.trim();
+      if (duration) el.style.setProperty("--hr-duration", `${duration}s`);
+      el.classList.add("hr-reveal");
+    }
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      for (const el of nodes) el.classList.add("hr-visible");
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          entry.target.classList.add("hr-visible");
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0, rootMargin: "0px 0px -40px 0px" },
+    );
+
+    for (const el of nodes) observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   function toggleMusic() {
     const audio = audioRef.current;
@@ -80,8 +115,8 @@ export default function App() {
                     <div
                       data-hd="w-9t90yjc1"
                       className="p-absolute group-auto-scroll sroll-size"
-                      data-motion="slideInDown"
-                      data-duration="5"
+                      data-motion="fadeInDown"
+                      data-duration="3"
                     >
                       <div className="group-container">
                         <div
