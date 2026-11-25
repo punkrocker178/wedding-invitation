@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import type { Plugin } from 'vite'
 import { defineConfig } from 'vite'
 
-const base = '/wedding-invitation/'
+const base = '/'
 
 function prefixRootUrls(publicBase: string): Plugin {
   const normalized = publicBase.endsWith('/') ? publicBase : `${publicBase}/`
