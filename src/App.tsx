@@ -159,7 +159,7 @@ export default function App() {
                                     objectPosition: "center",
                                     color: "transparent",
                                   }}
-                                  src={asset("images/16.jpg")}
+                                  src={asset("images/16.webp")}
                                 />
                               </span>
                             </div>
@@ -1468,7 +1468,7 @@ export default function App() {
                         alt="Ngọc Hiếu và Lan Anh — ảnh 3"
                         loading="lazy"
                         decoding="async"
-                        src={asset("images/5.jpg")}
+                        src={asset("images/5.webp")}
                       />
                     </button>
                     <div className="flex flex-col gap-2">
@@ -1484,7 +1484,7 @@ export default function App() {
                           alt="Ngọc Hiếu và Lan Anh — ảnh 3"
                           loading="lazy"
                           decoding="async"
-                          src={asset("images/15.jpg")}
+                          src={asset("images/15.webp")}
                         />
                       </button>
                       <button
@@ -1499,7 +1499,7 @@ export default function App() {
                           alt="Ngọc Hiếu và Lan Anh — ảnh 5"
                           loading="lazy"
                           decoding="async"
-                          src={asset("images/7.jpg")}
+                          src={asset("images/7.webp")}
                         />
                       </button>
                     </div>
@@ -1529,7 +1529,7 @@ export default function App() {
                       objectPosition: "center",
                       color: "transparent",
                     }}
-                    src={asset("images/12.jpg")}
+                    src={asset("images/12.webp")}
                   />
                 </button>
                 <button
@@ -1554,7 +1554,7 @@ export default function App() {
                       objectPosition: "center",
                       color: "transparent",
                     }}
-                    src={asset("images/9.jpg")}
+                    src={asset("images/9.webp")}
                   />
                 </button>
                 <button onClick={onPhotoButtonClick} type="button" aria-label="Xem ảnh thêm 1">
@@ -1575,7 +1575,7 @@ export default function App() {
                       objectPosition: "center",
                       color: "transparent",
                     }}
-                    src={asset("images/10.jpg")}
+                    src={asset("images/10.webp")}
                   />
                 </button>
                 <button onClick={onPhotoButtonClick} type="button" aria-label="Xem ảnh thêm 2">
@@ -1596,7 +1596,7 @@ export default function App() {
                       objectPosition: "center",
                       color: "transparent",
                     }}
-                    src={asset("images/11.jpg")}
+                    src={asset("images/11.webp")}
                   />
                 </button>
               </div>
