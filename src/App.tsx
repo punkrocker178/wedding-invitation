@@ -115,8 +115,8 @@ export default function App() {
                     <div
                       data-hd="w-9t90yjc1"
                       className="p-absolute group-auto-scroll sroll-size"
-                      data-motion="slideInDown"
-                      data-duration="5"
+                      data-motion="fadeInDown"
+                      data-duration="3"
                     >
                       <div className="group-container">
                         <div
